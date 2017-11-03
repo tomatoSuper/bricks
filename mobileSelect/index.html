@@ -21,75 +21,50 @@
         div .btn {
             float: left;
         }
+        #lev4 {
+            float: none;
+            width: 97%;
+        }
     </style>
 
 </head>
 <body>
     <div>
-        <a href="javascript:;" class="btn" id="lev1">一级</a>
-        <a href="javascript:;" class="btn" id="lev2">二级</a>
-        <a href="javascript:;" class="btn" id="lev3">三级</a>
+        <a href="javascript:;" class="btn" id="lev1"></a>
+        <a href="javascript:;" class="btn" id="lev2"></a>
+        <a href="javascript:;" class="btn" id="lev3"></a>
+        <a href="javascript:;" class="btn" id="lev4">keyMap</a>
     </div>
     <script src="plugins/mobileSelect.js"></script>
     <script src="plugins/createSelect.js"></script>
     <script src="js/dataConfig.js"></script>
     <script>
-        var lev1 = createSelect({
-            selector: '#lev1',
-            title: '一级',
-            data: zoneList,
-            transitionEnd:function(indexArr, data){
-
-            },
-            callback:function(indexArr, data){
-                console.log(11111);
-                console.log(data[0]);
-                var subList = data[0].subList;
-                lev2.updateWheel(0, subList);
-            }
-        });
-        var lev2 = createSelect({
-            selector: '#lev2',
-            title: '二级',
-//            data: [{value:''}],
-            initIdx: '',
-            transitionEnd:function(indexArr, data){
-            },
-            callback:function(indexArr, data){
-                console.log(data);
-                var subList = data[0].subList;
-                console.log(2222);
-                console.log(subList);
-                lev3.updateWheel(0, subList);
-            }
-        });
-        var lev3 = createSelect({
-            selector: '#lev3',
-            title: '三级',
-//            data: [{value:''}],
-            transitionEnd:function(indexArr, data){
-            },
-            callback:function(indexArr, data){
-                console.log(data[0]);
-            }
-        });
-        function createSelect(opt) {
-            var mobileSelect = new MobileSelect({
-                trigger: opt.selector,
-                title: opt.title,
-                wheels: [
-                    {data: opt.data?opt.data:[{value:''}]}
-                ],
-                position:[opt.initIdx?opt.initIdx:0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
-                transitionEnd:function(indexArr, data){
-                    opt.transitionEnd(indexArr[0],data)
-                },
-                callback:function(indexArr, data){
-                    opt.callback(indexArr[0],data)
-                }
-            });
-            return mobileSelect;
-        }
+//        var ms = new MSelect({
+//            selector: ["#lev1","#lev2","#lev3"],
+//            title: ['一级列表','二级列表','三级列表']
+//        });
+//        ms[0].updateWheel(0,zoneList);
+          mSelect({
+                selector: ["#lev1","#lev2","#lev3"],
+                title: ['一级列表','二级列表','三级列表'],
+                checked:['河北省','保定市','雄县'],
+                data:zoneList
+          });
+          var keyMapList=[
+              {zoneName:'河南省',spells:'HeNan',shortName:'豫',lvId:'e3213166',zipCode:'461000',subList:heNanCityList},
+              {zoneName:'河北省',spells:'HeBei',shortName:'冀',lvId:'s1i2903u3',zipCode:'300000',subList:heBeiCityList}
+          ];
+//        var lv4 = new MobileSelect({
+//            trigger: '#lev4',
+//            title: 'keyMap',
+////            checked:['河南省','许昌市','鄢陵县'],
+//            keyMap:{value:'value',id:'id',childs:'subList'},
+//            position:[0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+//            transitionEnd:function(indexArr, data){},
+//            callback:function(indexArr, data){
+//                console.log(data);
+//            }
+//        });
     </script>
 </body>
 </html>

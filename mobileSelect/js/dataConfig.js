@@ -20,6 +20,11 @@ var shiJiaZhuangCityList = [
     {value:'正定区',spells:'ZhengDing',shortName:'正定',id:'m12u3s9',zipCode:'053100',subList:[]},
     {value:'行唐区',spells:'XingTang',shortName:'行唐',id:'h123897h',zipCode:'054200',subList:[]}
 ];
+var baoDingCityList = [
+    {value:'易县',spells:'YiXian',shortName:'易县',id:'dqw1i309',zipCode:'074200',subList:[]},
+    {value:'雄县',spells:'XiongXian',shortName:'雄县',id:'ve20932',zipCode:'071800',subList:[]},
+    {value:'高碑店',spells:'GaoBeiDian',shortName:'高碑店',id:'js82123s',zipCode:'074000',subList:[]}
+];
 var heNanCityList = [
     {value:'郑州市',spells:'ZhengZhou',shortName:'郑',id:'e4564123',zipCode:'410100',subList:zhengZhouCityList},
     {value:'南阳市',spells:'NanYang',shortName:'宛',id:'aw123122',zipCode:'473000',subList:NanYangCityList},
@@ -32,6 +37,7 @@ var xingTaiCityList = [
 ];
 var heBeiCityList = [
     {value:'石家庄市',spells:'ShiJiaZhuang',shortName:'石',id:'b1i2093',zipCode:'050000',subList:shiJiaZhuangCityList},
+    {value:'保定市',spells:'BaoDing',shortName:'保',id:'ijs832091',zipCode:'056000',subList:baoDingCityList},
     {value:'邢台市',spells:'XingTai',shortName:'邢',id:'c083u12',zipCode:'054000',subList:xingTaiCityList}
 ];
 var zoneList = [

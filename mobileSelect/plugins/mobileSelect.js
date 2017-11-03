@@ -85,7 +85,7 @@
                     i==_this.wheel.length-1 ? tempValue += _this.getInnerHtml(i) : tempValue += _this.getInnerHtml(i) + _this.connector;
                 }
                 _this.trigger.innerHTML = tempValue;
-                _this.callback(_this.getIndexArr(),_this.getValue());
+                _this.callback(_this.getIndexArr(),_this.getValue(),_this.trigger);
             });
 
             _this.trigger.addEventListener('click',function(){
